@@ -1,13 +1,11 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
-
-  
 int main(){
 
-        int riodejaneiro, saopaulo ;
+    /*VARIAVEL DECLARADAS*/
+
+    
+    int riodejaneiro, saopaulo ;
     float densidadepopulacional1,densidadepopulacional2 ;
     float pibpercapito1 , pibpercapito2;
 
@@ -16,6 +14,23 @@ int main(){
 
      riodejaneiro = 550.000;
      saopaulo = 450.000;
+
+    char produtoA[30] = "Produto A ";
+    char produtoB[30] = "Produto B ";
+
+    unsigned int estoqueA = 1000;
+    unsigned int estoqueB = 2000;
+
+    float valorA = 40.50;
+    float valorB = 20.40;
+
+    unsigned int estoqueMinimoA = 5000;
+    unsigned int estoqueMinimoB = 1500;
+
+    double valortotalA;
+    double valortatalB;
+
+    int resultadoA , resultadoB;
 
         /*Na segunda étapa do jogo, iremos criar os valores*/
 
@@ -31,23 +46,42 @@ int main(){
             printf("escolha a sua cidade: \n");
         scanf("%d", &riodejaneiro, saopaulo );
 
+             
+// COMPARAR O VALOR MINIMO DE ESTOQUE
+
+    resultadoA = estoqueA > estoqueMinimoA;
+    resultadoB = estoqueB > estoqueMinimoB;
+
+    resultado = (densidadepopulacional1 * densidadepopulacional2);
+    resultado1 = (pibpercapito1 * pibpercapito2);
+
     /*Na terceira étapa do jogo, iremos verificar*/
     
-                if (riodejaneiro > saopaulo) {   
-                printf(" Rio de janeiro tem mais população \n");}
-                else{ printf("Sao paulo tem menas população \n");}
+if (riodejaneiro > saopaulo) {   
+    printf(" Rio de janeiro tem mais população \n");}
+else{ printf("Sao paulo tem menas população \n");}
 
 
-resultado = (densidadepopulacional1 * densidadepopulacional2);
-resultado1 = (pibpercapito1 * pibpercapito2);
+printf(" A POPULACAO E :%f\n", resultado);
+printf(" O PIB PER CAPTO E :%f\n", resultado1);
 
- printf(" A POPULACAO E :%f\n", resultado);
- printf(" O PIB PER CAPTO E :%f\n", resultado1);
+printf("A cidade venceedora e :%d \n", riodejaneiro,saopaulo);
 
-printf("A cidade venceedora e :%d \n", riodejaneiro,saopaulo);  
-    
+// EXIBIR  OS VALORES DOS PRODUTOS
+
+printf("produto %s tem estoque %u e o valor unitario e R$ :%.2f \n", produtoA, estoqueA, valorA);
+printf("produto %s tem estoque %u e o valor unitario e R$ :%.2f \n", produtoB, estoqueB, valorB);
+
+printf(" O produto %s tem estoque minimo %d \n", produtoA, resultadoA);
+printf(" O produto %s tem estoque minimo %d \n", produtoB, resultadoB);
+
+printf(" O valor total de A (R$ %.2f) e maior que  o valor total de B (R$ %.2f)? : %d\n", 
+                            estoqueA * valorA,
+                            estoqueB * valorB,
+                            (estoqueA * valorA) > (estoqueB * valorB));
+                            printf(" O valor e VERDADEIRO");
+
 
 return 0;
 
-
-} 
+}
